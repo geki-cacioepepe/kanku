@@ -1,12 +1,12 @@
 (() => {
-  const btn = document.querySelector("header button");
-  const nav = document.querySelector("nav");
+  const btn = document.querySelector(".contents-wrapper button");
+  const header = document.querySelector("header");
   btn.addEventListener("click", () => {
     btn.classList.toggle("open");
-    nav.classList.toggle("open");
+    header.classList.toggle("open");
   });
-  nav.addEventListener("click", () => {
+  header.addEventListener("click", () => {
     btn.classList.toggle("open");
-    nav.classList.toggle("open");
+    header.classList.toggle("open");
   });
 })();

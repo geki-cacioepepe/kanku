@@ -39,7 +39,6 @@ img {
 
 main .contents-wrapper {
   width: 550px;
-  background-color: var(--color-brown2);
   position: absolute;
   top: 0;
   right: 0;
@@ -53,12 +52,6 @@ main .contents-wrapper .inner {
 
 section {
   padding-bottom: 64px;
-  position: relative;
-}
-
-main .contents-wrapper section * {
-  position: relative;
-  z-index: 1;
 }
 
 h2 {
@@ -92,6 +85,7 @@ header {
   right: 0;
   padding-top: 16px;
   padding-right: 16px;
+  background-color: var(--color-brown2);
 }
 
 header a.logo {
@@ -210,39 +204,50 @@ section.staff dl:not(:last-of-type) {
 }
 /* staff */
 
-@media (min-width: 769px) {
-  br.sm-only {
-    display: none;
+@media (min-width: 1024px) {
+  .sm-only {
+    display: none !important;
   }
 }
 
-@media (max-width: 768px) {
-  br.lg-only {
-    display: none;
+@media (max-width: 1023px) {
+  .lg-only {
+    display: none !important;
   }
-  main > section {
-    width: var(--sp-contents-size);
+  div.kv figure {
+    width: calc(100% - var(--pc-contents-size));
+  }
+  main .contents-wrapper {
+    width: var(--pc-contents-size);
+  }
+  header {
+    transform: translateX(100%);
+    transition-duration: 0.2s;
+    transition-property: transform;
   }
 
-  header.global-header {
-    width: 100%;
+  header.open {
+    transform: translateX(0);
   }
 
-  header.global-header button {
+  .contents-wrapper button {
+    display: block;
     width: 30px;
     height: 30px;
-    position: absolute;
+    position: fixed;
     right: 15px;
     top: 15px;
     cursor: pointer;
+    z-index: 1000;
+    outline: 0;
   }
 
-  header.global-header button:before,
-  header.global-header button:after {
+  .contents-wrapper button:before,
+  .contents-wrapper button:after {
     content: "";
     display: block;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background-color: var(--main-text-color);
     position: absolute;
     transition-duration: 0.2s;
@@ -250,148 +255,33 @@ section.staff dl:not(:last-of-type) {
     transition-property: transform, background-color;
   }
 
-  header.global-header button:before {
+  .contents-wrapper button:before {
     top: 10px;
   }
-  header.global-header button:after {
+  .contents-wrapper button:after {
     bottom: 10px;
   }
 
-  header.global-header button.open:before {
+  .contents-wrapper button.open:before {
     top: 50%;
     transform: rotate(30deg);
-    background-color: #eaded4;
   }
-  header.global-header button.open:after {
+  .contents-wrapper button.open:after {
     bottom: 50%;
     transform: rotate(-30deg);
-    background-color: #eaded4;
   }
+}
 
-  header.global-header a.logo {
-    width: 200px;
+@media (max-width: 767px) {
+  div.kv figure {
+    width: 100%;
   }
-
-  header.global-header nav {
-    display: none;
-    animation-name: sp-nav;
-    animation-duration: 0.5s;
+  main .contents-wrapper {
+    width: 100%;
+    position: relative;
+    padding-top: 100vh;
   }
-
-  @keyframes sp-nav {
-    0% {
-      opacity: 0;
-      transform: translate(-10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-
-  header.global-header nav.open {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(29, 68, 66, 0.95);
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 50px;
-  }
-
-  header.global-header nav ul {
-    gap: 20px;
-  }
-
-  header.global-header nav a {
-    color: #eaded4;
-    font-size: 16px;
-  }
-
-  section.story .lead {
-    font-size: 105%;
-    padding-bottom: 150px;
-  }
-
-  section.story .lead p {
-    white-space: nowrap;
-  }
-
-  section.story .lead p:nth-of-type(1) {
-    text-indent: -0.5em;
-  }
-
-  section.story .lead p:nth-of-type(2) {
-    text-indent: 0.5em;
-  }
-
-  section.place .wrap {
-    display: block;
-  }
-
-  section.place .wrap .text {
-    margin-right: 0;
-  }
-
-  /* cast */
-
-  section.cast .text p {
-    margin-left: 16px;
-    margin-right: 16px;
-    font-size: 18px;
-  }
-
-  section.cast .text p span {
-    display: block;
-    font-size: 10px;
-  }
-  /* cast */
-
-  section.place h3 {
-    font-size: 14px;
-    line-height: 1.6;
-    font-weight: normal;
-  }
-
-  section.story:after {
-    width: 140px;
-    height: 140px;
-    left: 0px;
-    bottom: -70px;
-  }
-
-  section.schedule:after {
-    width: 50px;
-    height: 160px;
-    right: 0px;
-    top: 30px;
-    transform: rotate(20deg);
-  }
-  section.ticket:after {
-    width: 120px;
-    height: 200px;
-    background-image: url("../images/bg_gentle.png");
-    right: -10px;
-    bottom: -70px;
-  }
-  section.place:after {
-    width: 50px;
-    height: 140px;
-    background-image: url("../images/bg_lady.png");
-    left: auto;
-    top: auto;
-    right: 20px;
-    bottom: -70px;
-  }
-  section.staff:after {
-    width: 120px;
-    height: 120px;
-    background-image: url("../images/bg_balance.png");
-    right: auto;
-    left: 0px;
-    bottom: -50px;
+  main .contents-wrapper .inner {
+    width: 100%;
   }
 }
