@@ -222,8 +222,8 @@ header {
   background-image: url("../images/circle_bg1.webp"),
     url("../images/circle_bg2.webp");
   background-repeat: no-repeat, no-repeat;
-  background-size: 256px auto, 256px auto;
-  background-position: left top 64px, left -100px top 400px;
+  background-size: 230px auto, 230px auto;
+  background-position: left top 64px, left -100px bottom 200px;
 }
 
 header a.logo {
