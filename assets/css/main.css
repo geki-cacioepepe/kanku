@@ -3,6 +3,7 @@ html {
   --main-text-color: #000000;
   --color-brown1: rgb(206, 192, 175);
   --color-brown2: rgb(183, 157, 138);
+  --color-brown3: #c5b8af;
   --color-orange: rgb(250, 64, 17);
   --color-gold: rgb(172, 157, 138);
   /* fsz vars*/
@@ -216,15 +217,20 @@ header {
   position: fixed;
   bottom: 0;
   right: 0;
-  padding-top: 16px;
-  padding-right: 16px;
-  background-color: var(--color-brown2);
+  padding-top: 8px;
+  background-color: var(--color-brown3);
+  background-image: url("/assets/images/circle_bg1.webp"),
+    url("/assets/images/circle_bg2.webp");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 256px auto, 256px auto;
+  background-position: left top 64px, left -100px top 400px;
 }
 
 header a.logo {
   display: block;
-  width: 128px;
+  width: 178px;
   margin-left: auto;
+  margin-right: auto;
   filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.3));
 }
 
