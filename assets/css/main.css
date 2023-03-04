@@ -219,8 +219,8 @@ header {
   right: 0;
   padding-top: 8px;
   background-color: var(--color-brown3);
-  background-image: url("/assets/images/circle_bg1.webp"),
-    url("/assets/images/circle_bg2.webp");
+  background-image: url("../assets/images/circle_bg1.webp"),
+    url("..//assets/images/circle_bg2.webp");
   background-repeat: no-repeat, no-repeat;
   background-size: 256px auto, 256px auto;
   background-position: left top 64px, left -100px top 400px;
