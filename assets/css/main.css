@@ -333,6 +333,10 @@ section.cast h4:not(:first-of-type) {
 }
 /* cast */
 
+section.schedule {
+  
+}
+
 /* staff */
 section.staff dl {
   font-size: var(--default-text-size);
