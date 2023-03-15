@@ -223,7 +223,7 @@ header {
     url("../images/circle_bg2.webp");
   background-repeat: no-repeat, no-repeat;
   background-size: 150% auto, 140% auto;
-  background-position: left 0 top 100px, left -100px bottom max(150px,30%);
+  background-position: left 0 top 100px, left -100px bottom max(150px, 30%);
 }
 
 header a.logo {
@@ -317,6 +317,10 @@ section.program h3 span.fr {
   color: var(--color-gold);
 }
 
+section.program h3:not(:first-of-type) {
+  margin-top: 32px;
+}
+
 /* cast */
 section.cast h4 {
   font-weight: 700;
@@ -327,7 +331,6 @@ section.cast h4 {
 section.cast h4:not(:first-of-type) {
   margin-top: 32px;
 }
-
 
 /* staff */
 section.staff dl {
