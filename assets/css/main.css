@@ -298,7 +298,7 @@ div.kv figure img {
   object-fit: contain;
 }
 
-/* kv */
+/* intro */
 section.intro p.name {
   margin-top: 8px;
   text-align: right;
@@ -310,15 +310,11 @@ section.intro p.name span {
   text-align: left;
 }
 
-section.intro h3 span.fr {
+section.program h3 span.fr {
   font-style: italic;
   font-weight: 400;
   font-size: 75%;
   color: var(--color-gold);
-}
-
-section.intro .story {
-  margin-top: 48px;
 }
 
 /* cast */
@@ -331,11 +327,7 @@ section.cast h4 {
 section.cast h4:not(:first-of-type) {
   margin-top: 32px;
 }
-/* cast */
 
-section.schedule {
-  
-}
 
 /* staff */
 section.staff dl {
